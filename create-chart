@@ -4,9 +4,6 @@ my_data_set <- read.csv("c:/Users/Person/Desktop/my_data_set.csv")
 # View the data set
 View(my_data_set)
 
-# Create a scatter plot chart with the x-axis being the Analysis_Vs_Presentation attribute and the y-axis being the Flexibility attribute
-plot(my_data_set$Analysis_Vs_Presentation, my_data_set$Flexibility)
-
 # Create a variable containing the hex values of the colours to be used to represent the Type attribute
 #  the '66' on the end of the 6 digit hex value for the colour makes the colour semi-transparent
 IScolors <- c("#2171b566", "#f0c50566")
