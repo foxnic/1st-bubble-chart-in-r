@@ -1,0 +1,25 @@
+# Read in data set from CSV file 
+my_data_set <- read.csv("c:/Users/Person/Desktop/my_data_set.csv")
+
+# View the data set
+View(my_data_set)
+
+# Create a scatter plot chart with the x-axis being the Analysis_Vs_Presentation attribute and the y-axis being the Flexibility attribute
+plot(my_data_set$Analysis_Vs_Presentation, my_data_set$Flexibility)
+
+# Create a variable containing the hex values of the colours to be used to represent the Type attribute
+IScolors <- c("#e6f598", "#66c2a5")
+
+# Get the numeric values of the Type attribute values as they're currently strings I.e 'Interactive' and 'Static'
+TypeLevels <- as.numeric(my_data_set$Type)
+
+# Change the points in the scatter plot to circles, 
+#   where the size reflects the value of the Easiness attribute 
+#   and the colour of the circles represents the value of the Type attribute.
+#   Also, change the labels of the x and y axes to Presentation and Flexibility, 
+#   and set the title of the chart to "Comparison of 5 Data Analytics Tools"
+#   and set the x and y axes scales to range from 0 to 11.
+symbols(my_data_set$Analysis_Vs_Presentation, my_data_set$Flexibility, circles=sqrt(my_data_set$Easiness), inches=0.8, bg = IScolors[TypeLevels], fg = IScolors[TypeLevels], xlab="Presentation", ylab="Flexibility", main="Comparison of 5 Data Analytics Tools", xlim=c(0, 11), ylim=c(0, 11))
+
+# Add text to each circle to show what Tool it represents. Set the font size parameter 'cex' to 1
+text(my_data_set$Analysis_Vs_Presentation, my_data_set$Flexibility, my_data_set$Tool, cex=1)
