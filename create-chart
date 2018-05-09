@@ -23,3 +23,6 @@ symbols(my_data_set$Analysis_Vs_Presentation, my_data_set$Flexibility, circles=s
 
 # Add text to each circle to show what Tool it represents. Set the font size parameter 'cex' to 1
 text(my_data_set$Analysis_Vs_Presentation, my_data_set$Flexibility, my_data_set$Tool, cex=1)
+
+# Add a key (legend) so the reader know which colour represents a 'Static' tool and which represents an 'Interactive' tool
+legend("bottomright", legend=c("Interactive","Static"), col=IScolors, fill=IScolors, cex=0.75)
